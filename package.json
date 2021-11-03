@@ -1,0 +1,19 @@
+{
+  "name": "anchor",
+  "version": "1.0.0",
+  "description": "playground for anchor",
+  "main": "./build/index.js",
+  "author": "Matan Hamilis",
+  "license": "MIT",
+  "dependencies": {
+    "@anchor-protocol/anchor.js": "^1.2.0",
+    "@terra-money/terra.js": "^2.0.15",
+    "@types/node": "^16.11.6",
+    "commander": "^8.3.0"
+  },
+  "scripts": {
+    "run": "yarn build && node build/index.js",
+    "build": "tsc",
+    "app": "yarn build && node build/app.js"
+  }
+}
