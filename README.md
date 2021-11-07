@@ -7,10 +7,10 @@ I'll also try to give some explanation for everything we done in this program.
 [Anchor](https://anchorprotocol.com/) is a savings protocol, backed by the [Terra](https://www.terra.money/) blockchain.
 To be explicit, it is a set of smart contracts on the Terra blockchain providing the service of a decentralized savings and borrow solution. 
 Much like other projects such as Compound and Maker, it allows the user to deposit some stable-coins. 
-However, unlike Maker and Compound, it has some APY-stabalizing mechanisms. 
+However, unlike Maker and Compound, it has some APY-stabilizing mechanisms. 
 Be sure to read the [Anchor whitepaper](https://anchorprotocol.com/docs/anchor-v1.1.pdf) to fully understand how those mechanisms actually work. I'll try and give a glimpse of how it works.
 
-### Anchor's APY Stabalization Mechanism
+### Anchor's APY Stabilization Mechanism
 So in the savings mechanism typically there's a liquidity pool into which those who wish to gain some APY deposit some stablecoins.
 We also consider the borrowers who wish to borrow from the pool for and pay some interest (knwon as APR) for their borrow.
 The percentage from the pool which is borrowed and locked is known as the *utilization ratio*.
@@ -24,7 +24,7 @@ One problem with the existing mechanism is that it highly volatile with market t
 Anchor does its best to ensure the APY (annual percentage yield) is kept stable and as close to some constant known as the *anchor rate (AR)*.
 The value of this constant is determined by a moving average of the yields of the staked collaterals deposited by the borrowers in the past 12 months, so short-term disruptions will have small effect of this value.
 
-So the while idea of the stabalization mechniams in Anchor is that splits the staking rewards so that whenever the `depositRate(t)` is smaller than `AR(t)` (the anchor rate at time `t`), a larger fraction of the staking yields will get to the depositors so `depositRate(t+1)` will be bigger and thus closer to the anchor rate.
+So the while idea of the stabilization mechniams in Anchor is that splits the staking rewards so that whenever the `depositRate(t)` is smaller than `AR(t)` (the anchor rate at time `t`), a larger fraction of the staking yields will get to the depositors so `depositRate(t+1)` will be bigger and thus closer to the anchor rate.
 
 There is a lot more to learn (how AR is computed, how liquidation of collaterals can be done etc...), but these are the basics.
 
